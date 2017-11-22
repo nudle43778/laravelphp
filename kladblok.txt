@@ -1,2 +1,9 @@
 --geeft toegang tot je website
 https://denvb-15241-denvb.c9users.io/
+
+--GIT
+git add --all
+git commit --all -m ""
+
+git remote add origindvb https://DennisVanBeneden@bitbucket.org/DennisVanBeneden/programmeren4-15214-denvb.git
+git push -u origindvb master
