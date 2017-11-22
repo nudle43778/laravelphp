@@ -1,2 +1,3 @@
 -php geleerd
 -php geinstalleerd op c9
+-gebruik geen interpolaties("") als je niet nodig hebt
