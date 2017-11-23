@@ -7,7 +7,7 @@
     <title>Les 3 - Hello World</title>
 </head>
 <body>
-    <h1>Hello World</h1>
+    <h1>Hello World!</h1>
     <?php
         $getal = 100;
         echo 'Je hebt €' . $getal;
