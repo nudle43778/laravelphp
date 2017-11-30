@@ -15,54 +15,54 @@ include ('code/helpers.php');
     <fieldset>
         <legend>Accountgegevens</legend>
         <div class>
-            <label for="firstName">Voornaam</label>
-            <input type="text" id="firstName" name="firstName" value="<?php echo $firstName;?>">
-            <span class="error"><?php echo $modelState["firstNameRequired"]; ?></span>
+            <label for="FirstName">Voornaam</label>
+            <input type="text" id="FirstName" name="FirstName" value="<?php echo $firstName;?>">
+            <span class="error"><?php echo $modelState["FirstNameRequired"]; ?></span>
         </div>
         <div class>
             <label for="LastName">Familienaam</label>
-            <input type="text" id="LastName" name="lastName" value="<?php echo $lastName;?>">
-            <span class="error"><?php echo $modelState["lastNameRequired"] ?></span>
+            <input type="text" id="LastName" name="LastName" value="<?php echo $lastName;?>">
+            <span class="error"><?php echo $modelState["LastNameRequired"] ?></span>
         </div>
         <div class>
             <label for="Email">E-mail</label>
             <input type="text" id="Email" name="Email" value="<?php echo $email;?>">
-            <span class="error"><?php echo $modelState["emailRequired"] ?></span>
-            <span class="error"><?php echo $modelState["emailValid"] ?></span>
+            <span class="error"><?php echo $modelState["EmailRequired"] ?></span>
+            <span class="error"><?php echo $modelState["EmailValid"] ?></span>
         </div>
         <div class>
-            <label for="password">Wachtwoord</label>
-            <input type="text" id="password" name="password" value="<?php echo $password1;?>">
-            <span class="error"><?php echo $modelState["passwordRequired"] ?></span>
-            <span class="error"><?php echo $modelState["passwordValid"] ?></span>
+            <label for="Password">Wachtwoord</label>
+            <input type="text" id="Password" name="Password" value="<?php echo $password1;?>">
+            <span class="error"><?php echo $modelState["PasswordRequired"] ?></span>
+            <span class="error"><?php echo $modelState["PasswordValid"] ?></span>
         </div>
         <div class>
-            <label for="passwordConfirm">Wachtwoord bevestigen</label>
-            <input type="text" id="passwordConfirm" name="passwordConfirm" value="<?php echo $password2;?>">
-            <span class="error"><?php echo $modelState["passwordRequired"] ?></span>
-            <span class="error"><?php echo $modelState["passwordValid"] ?></span>
+            <label for="PasswordConfirm">Wachtwoord bevestigen</label>
+            <input type="text" id="PasswordConfirm" name="PasswordConfirm" value="<?php echo $password2;?>">
+            <span class="error"><?php echo $modelState["PasswordRequired"] ?></span>
+            <span class="error"><?php echo $modelState["PasswordValid"] ?></span>
         </div>
     </fieldset>
     <fieldset>
         <legend>Adresgegevens</legend>
         <div class>
-            <label for="address1">Adres 1</label>
-            <input type="text" id="address1" name="address1"value="<?php echo $address1;?>">
-            <span class="error"><?php echo $modelState["address1Required"] ?></span>
+            <label for="Address1">Adres 1</label>
+            <input type="text" id="Address1" name="Address1"value="<?php echo $address1;?>">
+            <span class="error"><?php echo $modelState["Address1Required"] ?></span>
         </div>
         <div class>
-            <label for="address2"></label>
-            <input type="text" id="address2" name="address2">
+            <label for="Address2"></label>
+            <input type="text" id="Address2" name="Address2">
         </div>
         <div class>
-            <label for="city"></label>
-            <input type="text" id="city" name="city" value="<?php echo $city;?>">
-            <span class="error"><?php echo $modelState["cityRequired"] ?></span>
+            <label for="City"></label>
+            <input type="text" id="City" name="City" value="<?php echo $city;?>">
+            <span class="error"><?php echo $modelState["CityRequired"] ?></span>
         </div>
         <div class>
             <label for="PostalCode">Postcode</label>
             <input type="text" id="PostalCode" name="PostalCode" value="<?php echo $postalCode;?>">
-            <span class="error"><?php echo $modelState["postalCodeRequired"] ?></span>
+            <span class="error"><?php echo $modelState["PostalCodeRequired"] ?></span>
         </div>
         <div class>
             <label for="Country">Land</label>
@@ -72,27 +72,22 @@ include ('code/helpers.php');
                 <option value="Tr">Turkije</option>
                 <option value="Mg">Madagascar</option>
             </select>
-            <span class="error"><?php echo $modelState["countryRequired"] ?></span>
+            <span class="error"><?php echo $modelState["CountryRequired"] ?></span>
         </div>
     </fieldset>
     <fieldset>
         <legend>Persoonlijke gegevens</legend>
         <div class>
-            <label for="mobile">GSM</label>
-            <input type="text" id="mobile" name="mobile">
+            <label for="Mobile">GSM</label>
+            <input type="text" id="Mobile" name="Mobile">
         </div>
         <div class>
-            <label for="birthday">Geboortedatum</label>
-            <input type="date" id="birthday" name="birthday">
+            <label for="Birthday">Geboortedatum</label>
+            <input type="date" id="Birthday" name="Birthday">
         </div>
         <div class>
-            <label for="satisfied">Hoe tevreden ben je?</label>
-            <input type="range" id="satisfied" name="satisfied">
-        </div>
-        <div class>
-            <label for=""></label>
-            <input type="text" id="" name="">
-            <span class="error"></span>
+            <label for="Satisfied">Hoe tevreden ben je?</label>
+            <input type="range" id="Satisfied" name="Satisfied">
         </div>
         <div class>
             <label for="">Opleiding</label>
