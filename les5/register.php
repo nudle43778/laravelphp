@@ -15,7 +15,7 @@ include ('code/helpers.php');
     <fieldset>
         <legend>Accountgegevens</legend>
         <div class>
-            <label for="FirstName">Voornaam</label>
+            <label for="firstName">Voornaam</label>
             <input type="text" id="FirstName" name="FirstName" value="<?php echo $firstName;?>">
             <span class="error"><?php echo $modelState["FirstNameRequired"]; ?></span>
         </div>
@@ -31,23 +31,22 @@ include ('code/helpers.php');
             <span class="error"><?php echo $modelState["EmailValid"] ?></span>
         </div>
         <div class>
-            <label for="Password">Wachtwoord</label>
-            <input type="text" id="Password" name="Password" value="<?php echo $password1;?>">
-            <span class="error"><?php echo $modelState["PasswordRequired"] ?></span>
-            <span class="error"><?php echo $modelState["PasswordValid"] ?></span>
+            <label for="password">Wachtwoord</label>
+            <input type="text" id="Password1" name="Password1" value="<?php echo $password1;?>">
+            <span class="error"><?php echo $modelState["Password1Required"] ?></span>
+            <span class="error"><?php echo $modelState["Password1Valid"] ?></span>
         </div>
         <div class>
             <label for="PasswordConfirm">Wachtwoord bevestigen</label>
-            <input type="text" id="PasswordConfirm" name="PasswordConfirm" value="<?php echo $password2;?>">
-            <span class="error"><?php echo $modelState["PasswordRequired"] ?></span>
-            <span class="error"><?php echo $modelState["PasswordValid"] ?></span>
+            <input type="text" id="Password2" name="Password2" value="<?php echo $password2;?>">
+            <span class="error"><?php echo $modelState["Password2Required"] ?></span>
         </div>
     </fieldset>
     <fieldset>
         <legend>Adresgegevens</legend>
         <div class>
             <label for="Address1">Adres 1</label>
-            <input type="text" id="Address1" name="Address1"value="<?php echo $address1;?>">
+            <input type="text" id="Address1" name="Address1" value="<?php echo $address1;?>">
             <span class="error"><?php echo $modelState["Address1Required"] ?></span>
         </div>
         <div class>
@@ -89,36 +88,40 @@ include ('code/helpers.php');
             <label for="Satisfied">Hoe tevreden ben je?</label>
             <input type="range" id="Satisfied" name="Satisfied">
         </div>
+
         <div class>
             <label for="">Opleiding</label>
             <select id="Course" name="Course">
                 <option <?php echo ($course='hboi' ? 'selected' : ''); ?> value="hboi">HBO Informatica</option>
-                <option value="hbob">HBO Boekhouden</option>
-                <option value="hbow">HBO Winkelmanagement</option>
+                <option <?php echo ($course='hbob' ? 'selected' : ''); ?> value="hbob">HBO Boekhouden</option>
+                <option <?php echo ($course='hbow' ? 'selected' : ''); ?> value="hbow">HBO Winkelmanagement</option>
             </select>
         </div>
         <div class>
             <label for="">Module</label>
             <select id="Module" name="Module">
                 <option <?php echo ($module='A5' ? 'selected' : ''); ?> value="A5">Programmeren 1</option>
-                <option value="A6">Programmeren 2</option>
-                <option value="B2">Programmeren 3</option>
+                <option <?php echo ($module='A6' ? 'selected' : ''); ?> value="A6">Programmeren 2</option>
+                <option <?php echo ($module='B2' ? 'selected' : ''); ?> value="B2">Programmeren 3</option>
             </select>
         </div>
         <div class>
             <input name="PHP" value='PHP' id="ProgrammingLanguage" type="checkbox"
-                <?php echo ($programmingLanguage='PHP' ? 'selected' : ''); ?>>
+                <?php echo ($programmingLanguage='PHP' ? 'checked' : ''); ?>>
             <label for="PHP">PHP</label>
-            <input name="CSharp" value='C#' id="CSharp" type="checkbox">
+            <input name="CSharp" value='C#' id="CSharp" type="checkbox"
+                <?php echo ($programmingLanguage='CSharp' ? 'checked' : ''); ?>>
             <label for="CSharp">C#</label>
-            <input name="JS" value='JS' id="JS" type="checkbox">
+            <input name="JS" value='JS' id="JS" type="checkbox"
+                <?php echo ($programmingLanguage='JS' ? 'checked' : ''); ?>>
             <label for="JS">JavaScript</label>
         </div>
         <div class>
             <input name="Computer" value='NoteBook' id="NoteBook" type="radio"
-                <?php echo ($computer='NoteBook' ? 'selected' : ''); ?>>
+                <?php echo ($computer='NoteBook' ? 'checked' : ''); ?>>
             <label for="NoteBook">Notebook</label>
-            <input name="Computer" value='SchoolComputer' id="SchoolComputer" type="radio">
+            <input name="Computer" value='SchoolComputer' id="SchoolComputer" type="radio"
+                <?php echo ($computer='SchoolComputer' ? 'checked' : ''); ?>>
             <label for="SchoolComputer">School Computer</label>
         </div>
     </fieldset>
