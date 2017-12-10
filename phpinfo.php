@@ -6,4 +6,3 @@
  * Time: 11:43
  */
 phpinfo();
-nvondovn ?>
