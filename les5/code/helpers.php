@@ -57,11 +57,13 @@ if (!(empty($password1) or empty($password2))) {
     $modelState["Password1Valid"] = '';
 }
 
-$address2 = getValue('Adress2');
+$address2 = getValue('Address2');
 $birthday = getValue('Birthday');
 $satisfied = getValue('Satisfied');
 $computer = getValue('Computer');
-$programmingLanguage = getValue('ProgrammingLanguage');
+$pHP = getValue('PHP');
+$cSharp = getValue('CSharp');
+$jS = getValue('JS');
 $module = getValue('Module');
 $course = getValue('Course');
 
@@ -87,10 +89,22 @@ if ($modelStateValid) {
         $birthday . ';' .
         $satisfied . ';' .
         $computer . ';' .
-        $programmingLanguage . ';' .
+        $pHP . ';' .
+        $cSharp . ';' .
+        $jS . ';' .
         $module . ';' .
-        $course;
-    file_put_contents('data/person.txt',$person, FILE_APPEND);
+        $course . PHP_EOL;
+    file_put_contents('data/person.csv',$person, FILE_APPEND);
+}
+
+$personList = array();
+$personsText = file_get_contents('data/person.csv');
+$persons = explode(PHP_EOL, $personsText);
+foreach ($persons as $person) {
+    if (!empty($person)) {
+        $personList[] = explode(';', $person);
+    }
 }
 //var_dump($modelState);
 //var_dump($key);
+
