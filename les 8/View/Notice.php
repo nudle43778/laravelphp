@@ -1,4 +1,4 @@
-<h3><?php echo $model->getName(); ?></h3>
+<h3><?php echo $model->getSubject(); ?></h3>
 <div>
     <label>Calling class: </label>
     <span></span>
@@ -30,4 +30,3 @@
 <div><label>Debug info: </label>
     <span></span>
 </div>
-

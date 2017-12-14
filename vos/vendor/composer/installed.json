@@ -1,0 +1,49 @@
+[
+    {
+        "name": "modernways/dialog",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://bitbucket.org/JosephInghelbrecht/dialog.git",
+            "reference": "e012cc0871a932be869df3446dcb4f1f6ba5bce5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://bitbucket.org/JosephInghelbrecht/dialog/get/e012cc0871a932be869df3446dcb4f1f6ba5bce5.zip",
+            "reference": "e012cc0871a932be869df3446dcb4f1f6ba5bce5",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.0"
+        },
+        "time": "2016-11-12T09:36:24+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "ModernWays\\Dialog\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jef Inghelbrecht",
+                "email": "jef.inghelbrecht@inantwerpen.com",
+                "homepage": "http://inantwerpen.com/"
+            }
+        ],
+        "description": "The Dialog component consists of classes to implement a notice board that can be used in all sort of applications",
+        "homepage": "http://modernways.be/",
+        "keywords": [
+            "errormessage",
+            "feedback",
+            "message",
+            "notice",
+            "notice board"
+        ]
+    }
+]
