@@ -6,15 +6,22 @@ setlocale(LC_ALL, 'nlb');
 
 // initialiseert de classes, implementeert de namespaces (niet van anormapart maar van composer)
 include __DIR__ . '/vendor/autoload.php';
-// $notice = new ModernWays\Dialog\Model\Notice();
-$model = new ModernWays\Dialog\Model\NoticeBoard();
-$model->setCaption('Mijn eerste notitie');
+$notice = new RedMind\Dialog\Model\Notice();
+$model = new RedMind\Dialog\Model\NoticeBoard();
 $model->setTitle('Mijn prikbord');
-$model->log();
+$notice->setStart(date('Y-m-d H:i:s'));
+$notice->setSubject('Mijn eerste notitie');
+$notice->setCode('Je onthoudt me toch niet.');
+$notice->setMessage('Voor het eerst gebruikt in Red Mind');
+$notice->setEnd( date('Y-m-d H:i:s'));
+$model->pin($notice); 
+
 
 ?>
 
-
+<style>
+    <?php include ('css/index.css');?>
+</style>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,8 +34,26 @@ $model->log();
     <fieldset class="fieldsetBubble">
         <legend class="legendMiddle">Gegevens</legend>
         <?php
-            include ('vendor/modernways/dialog/src/View/NoticeBoard.php');
+            //var_dump($model);
+            include ('vendor/redmind/dialog/src/View/NoticeBoard.php');
         ?>
     </fieldset>
+    <a href="notice/insert">Inserten</a>
+    <a href="notice/update">Updaten</a>
+    <a href="notice/delete">Deleten</a>
+    <a href="notice/selectOne">Een selecteren</a>
+    <a href="notice/selectAll">Allemaal selecteren</a>
+    
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <button class="buttonStyle" name="uc" type="submit" value="notice/insert">Inserten</button>
+    <button class="buttonStyle" name="uc" type="submit" value="notice/update">Updaten</button>
+    <button class="buttonStyle" name="uc" type="submit" value="notice/delete">Deleten</button>
+    <button class="buttonStyle" name="uc" type="submit" value="notice/selectOne">Een selecteren</button>
+    <button class="buttonStyle" name="uc" type="submit" value="notice/selectAll">Allemaal selecteren</button>
+    </form>
+    
+    <pre>
+        <?php var_dump($_SERVER); ?>
+    </pre>
 </body>
 </html>

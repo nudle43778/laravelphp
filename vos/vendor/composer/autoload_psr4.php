@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'ModernWays\\Dialog\\' => array($vendorDir . '/modernways/dialog/src'),
+    'RedMind\\Dialog\\' => array($vendorDir . '/redmind/dialog/src'),
 );

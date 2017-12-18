@@ -9,14 +9,19 @@ class ComposerStaticInit61013c2e8151c47710c1ecc0103d9b28
     public static $prefixLengthsPsr4 = array (
         'M' => 
         array (
-            'ModernWays\\Dialog\\' => 18,
+            'Modernways\\Dialog\\' => 18,
+            'RedMind\\Dialog\\' => 15,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'ModernWays\\Dialog\\' => 
+        'Modernways\\Dialog\\' => 
         array (
             0 => __DIR__ . '/..' . '/modernways/dialog/src',
+        ),
+        'RedMind\\Dialog\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/redmind/dialog/src',
         ),
     );
 

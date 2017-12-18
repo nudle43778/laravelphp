@@ -1,3 +1,8 @@
+<style>
+    <?php include ('css/index.css');?>
+</style>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,6 +32,10 @@
         
 
     ?>
-    <label for=""><?php echo $feedback;?></label>
+    
+    <fieldset class="fieldsetBubble">
+        <legend class="legendMiddle">Overzicht</legend>
+            <center><label class="labelStyling"><?php echo $feedback;?></label></center>
+    </fieldset>
 </body>
 </html>
