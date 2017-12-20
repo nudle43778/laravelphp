@@ -1,12 +1,13 @@
-<?php 
+<?php
     namespace RedMind\Dialog\Controller;
-    class Home
+    class HomeController
     {
         public function index()
         {
-            $model;
-            $view = function ($model) {
+            $model = "Het beste MVC framework ter wereld!";
+            $view = function () use ($model) {
                 include("vendor/redmind/dialog/src/View/Home/Index.php");
-            }
+            };
+            return $view;
         }
     }
