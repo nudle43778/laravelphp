@@ -1,7 +1,7 @@
 <h1  class="header1Styling">Notice Insert</h1>
 <div class="control-panel">
     <a class="labelStyling"  href="?uc=Home/Index">Home Index</a>
-    <h2  class="header3Styling">Notice Index</h2>
+    <h2  class="header3Styling">Notice Insert</h2>
 </div>
 <div class="show-room">
     <div class="command-bar">
