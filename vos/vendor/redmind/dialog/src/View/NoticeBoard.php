@@ -1,5 +1,5 @@
 <div class="notice-board">
-    <h1><?php echo $model->getTitle(); ?></h1>
+    <h1 class="header1Styling"><?php echo $model->getTitle(); ?></h1>
     <?php
     if (count($model->getBoard()) > 0)
     {

@@ -11,6 +11,7 @@
     border: 10px black;
     color:brown;
     font-size:200%;
+    font-family: Myriad Pro;
     text-align:center;
 }
 .tableStyle {
@@ -35,10 +36,26 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    font-family: Myriad Pro;
 
 }
 .labelStyling{
     color: brown;
     font-size: large;
+    font-family: Myriad Pro;
+}
+.spanStyling{
+    color: black;
+    font-size: medium;
+    font-family: Myriad Pro;
+}
+.header3Styling{
+    color: black;
+    font-size: x-large;
+    font-family: Myriad Pro;
+}
+.header1Styling{
+    color: black;
+    font-size: xx-large;
     font-family: Myriad Pro;
 }

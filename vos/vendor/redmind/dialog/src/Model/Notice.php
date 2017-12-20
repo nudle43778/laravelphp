@@ -14,6 +14,7 @@ class Notice implements INotice {
     private $code;
     private $subject;
     private $message;
+    private $source;
 
     public function setStart($value) {
         $this->start = $value;
@@ -29,6 +30,9 @@ class Notice implements INotice {
     }
     public function setMessage($value) {
         $this->message = $value;
+    }
+    public function setSource($value){
+        $this->source = $value;   
     }
 
     public function getStart() {
@@ -46,5 +50,8 @@ class Notice implements INotice {
     }
     public function getMessage(){
         return $this->message;
+    }
+    public function getSource(){
+        return $this->source;   
     }
 }
