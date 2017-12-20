@@ -7,7 +7,7 @@
 <div class="command-bar">
     <h2 class="header3Styling">Notice</h2>
     <ol>
-        <li><a class="labelStyling"  href="?uc=Notice/Inserting">Notice Inserten</a></li>
+        <li><a class="labelStyling"  href="?uc=Notice/Insert">Notice Inserten</a></li>
     </ol>
     <div class="detail">
         

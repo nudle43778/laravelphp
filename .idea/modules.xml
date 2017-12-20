@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Programmeren4-15241.iml" filepath="$PROJECT_DIR$/.idea/Programmeren4-15241.iml" />
-      <module fileurl="file://C:\Mehdi\Programmeren4-15241\.idea\Programmeren4MS_15241.iml" filepath="C:\Mehdi\Programmeren4-15241\.idea\Programmeren4MS_15241.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Programmeren4MS_15241.iml" filepath="$PROJECT_DIR$/.idea/Programmeren4MS_15241.iml" />
+      <module fileurl="file://C:/Mehdi/Programmeren4-15241/.idea/Programmeren4MS_15241.iml" filepath="C:/Mehdi/Programmeren4-15241/.idea/Programmeren4MS_15241.iml" />
     </modules>
   </component>
 </project>

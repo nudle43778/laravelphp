@@ -14,6 +14,14 @@
     font-family: Myriad Pro;
     text-align:center;
 }
+.legendLeft{
+    padding: 0.2em 0.5em;
+    border: 10px dimgray;
+    color: blanchedalmond;
+    font-size:200%;
+    font-family: Myriad Pro;
+    text-align: left;
+}
 .tableStyle {
     border-collapse: collapse;
     border: 1px solid black;
