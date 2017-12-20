@@ -29,6 +29,7 @@ $model->pin($notice);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>VOS back-end</title>
+    <link rel="icon" href="~/vos/Content/Magnifier2.png">
 </head>
 <body>
     <fieldset class="fieldsetBubble">
