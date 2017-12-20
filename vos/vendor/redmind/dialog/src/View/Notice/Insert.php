@@ -1,8 +1,4 @@
-<style>
-    <?php include('css/index.css');?>
-</style>
-
-<h1  class="header1Styling">Notice Index</h1>
+<h1  class="header1Styling">Notice Insert</h1>
 <div class="control-panel">
     <a class="labelStyling"  href="?uc=Home/Index">Home Index</a>
     <h2  class="header3Styling">Notice Index</h2>
