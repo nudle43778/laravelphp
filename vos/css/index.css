@@ -17,7 +17,7 @@
 .legendLeft{
     padding: 0.2em 0.5em;
     border: 10px dimgray;
-    color: blanchedalmond;
+    color: brown;
     font-size:200%;
     font-family: Myriad Pro;
     text-align: left;
@@ -65,5 +65,10 @@
 .header1Styling{
     color: black;
     font-size: xx-large;
+    font-family: Myriad Pro;
+}
+.inputStyling{
+    color: brown;
+    font-size: medium;
     font-family: Myriad Pro;
 }

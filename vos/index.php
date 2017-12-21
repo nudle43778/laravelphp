@@ -1,25 +1,33 @@
 <?php
-    setlocale(LC_ALL, 'nlb');
-
-    require __DIR__ . '/vendor/autoload.php';
-    $uc = 'Home-LoggingIn';    
-    if (isset($_REQUEST['uc'])) {
-        if ($_REQUEST['uc'] == 'Home/Index') {
-            $controller = new RedMind\Dialog\Controller\HomeController();
-            $view = $controller->Index();
-        } else if ($_REQUEST['uc'] == 'Notice/Index') {
-            $controller = new RedMind\Dialog\Controller\NoticeController();
-            $view = $controller->Index();
+    function invokeActionMethod($entity, $action)
+    {
+        $namespace = "RedMind\Dialog";
+        // voer de actiemethode van de controller uit
+        $controllerName = "{$namespace}\\Controller\\{$entity}Controller";
+        $actionMethod = new \ReflectionMethod($controllerName, $action);
+        if (!class_exists($controllerName, true)) {
+            return false;
+        } else {
+            $reflection = new \ReflectionClass($controllerName);
+            $controller =  $reflection->newInstance();
+            return $actionMethod->invoke($controller);
         }
-
-    } else {
-        $controller = new RedMind\Dialog\Controller\HomeController();
-        $view = $controller->Index();
     }
-?>
+    
+    setlocale(LC_ALL, 'nlb');
+    require __DIR__ . '/vendor/autoload.php';
+    $uc = 'Home/Index';
+    if (isset($_REQUEST['uc'])) {
+        $uc = $_REQUEST['uc'];
+    }
+    $route = explode('/', $uc);
+    $entity = $route[0];
+    $action = $route[1];
+    $view = invokeActionMethod($entity, $action);
 
+?>
 <style>
-    <?php include('/vos/css/index.css');?>
+    <?php include('css/index.css')?>
 </style>
 
 <!DOCTYPE html>
@@ -28,10 +36,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="/vos/Content/Magnifier.ico">
     <title>Red Mind Dialog</title>
 </head>
 <body>
     <?php $view();?>
+    <footer>
+        
+    </footer>
 </body>
 </html>
