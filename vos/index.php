@@ -41,7 +41,7 @@
 <body>
     <?php $view();?>
     <footer>
-        
+        <label class="labelStyling">Made by Mehdi Sahri</label>
     </footer>
 </body>
 </html>

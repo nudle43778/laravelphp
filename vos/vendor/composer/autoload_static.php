@@ -10,6 +10,7 @@ class ComposerStaticInit61013c2e8151c47710c1ecc0103d9b28
         'M' => 
         array (
             'Modernways\\Dialog\\' => 18,
+            'Modernways\\Mvc\\' => 15,
             'RedMind\\Dialog\\' => 15,
         ),
     );
@@ -18,6 +19,10 @@ class ComposerStaticInit61013c2e8151c47710c1ecc0103d9b28
         'Modernways\\Dialog\\' => 
         array (
             0 => __DIR__ . '/..' . '/modernways/dialog/src',
+        ),
+        'Modernways\\Mvc\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/modernways/mvc/src',
         ),
         'RedMind\\Dialog\\' => 
         array (

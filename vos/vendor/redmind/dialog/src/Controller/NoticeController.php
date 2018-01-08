@@ -12,14 +12,14 @@
             return $view;
         }
         
-        public function Inserting(){
+        public function inserting(){
             $view = function () {
                 include("vendor/redmind/dialog/src/View/Notice/Inserting.php");
             };
             return $view;
         }
         
-        public function Insert() {
+        public function insert() {
             // model updaten gebaseerd op nieuwe input van de view
             $model = new \RedMind\Dialog\Model\Notice();
             $model->setSubject(filter_input(INPUT_POST, 'Subject', FILTER_SANITIZE_STRING));

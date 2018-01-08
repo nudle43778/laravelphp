@@ -72,3 +72,51 @@
     font-size: medium;
     font-family: Myriad Pro;
 }
+.labelStyling2{
+    color: brown;
+    font-size: 100px;
+    font-family: Myriad Pro;
+    float: right;
+    margin-right: 10px;
+}
+.fieldsetBubble2{
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 35px;
+    border-width: thick;
+    border-color: black;
+    background-color: floralwhite;
+    padding: 20px;
+    display: inline-block;
+    
+}
+.placementRight{
+    float: right;
+    margin-right: 10px;
+}
+.placementLeft{
+    float: left;
+    margin-left: 10px;
+}
+.placementLeftCustom{
+    float: left;
+    margin-left: 10px;
+}
+.fieldsetBubble3{
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 35px;
+    border-width: thick;
+    border-color: black;
+    background-color: floralwhite;
+    width: 1300px;
+}
+.placementRightCustom{
+    float: right;
+    margin-right: 50px;
+}
+.labelStyling3{
+    color: brown;
+    font-size: xx-large;
+    font-family: Myriad Pro;
+}

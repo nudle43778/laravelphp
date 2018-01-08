@@ -1,13 +1,15 @@
 <?php
     namespace RedMind\Dialog\Controller;
-    class HomeController
+    
+    use index;
+    
+    class HomeController extends \Modernways\Mvc\Controller
     {
         public function index()
         {
             $model = "Het beste MVC framework ter wereld!";
-            $view = function () use ($model) {
-                include("vendor/redmind/dialog/src/View/Home/Index.php");
-            };
-            return $view;
+            return $this->view();
         }
+        
+        
     }
