@@ -1,0 +1,15 @@
+<?php
+    namespace RedMind\MVC\Controller;
+    class BaseController{
+        protected function view(){
+            $trace=debug_backtrace();
+            // Get the class of the controller: remove the namespace and 'Controller' at the end.
+            $controller=str_replace('Controller','',str_replace(__NAMESPACE__.'\\','',$trace[0]["class"]));
+            $method=$trace[1]["function"];
+            $path="vendor/redmind/dialog/src/View/{$controller}/{$method}.php";
+            $view=function() use ($path) {
+                include($path);
+            };
+            return $view;
+        }
+    }

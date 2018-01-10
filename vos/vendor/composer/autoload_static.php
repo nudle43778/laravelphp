@@ -10,7 +10,7 @@ class ComposerStaticInit61013c2e8151c47710c1ecc0103d9b28
         'M' => 
         array (
             'Modernways\\Dialog\\' => 18,
-            'Modernways\\Mvc\\' => 15,
+            'RedMind\\Mvc\\' => 12,
             'RedMind\\Dialog\\' => 15,
         ),
     );

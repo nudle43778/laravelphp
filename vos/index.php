@@ -1,47 +1,55 @@
 <?php
-    function invokeActionMethod($entity, $action)
-    {
-        $namespace = "RedMind\Dialog";
-        // voer de actiemethode van de controller uit
-        $controllerName = "{$namespace}\\Controller\\{$entity}Controller";
-        $actionMethod = new \ReflectionMethod($controllerName, $action);
-        if (!class_exists($controllerName, true)) {
-            return false;
-        } else {
-            $reflection = new \ReflectionClass($controllerName);
-            $controller =  $reflection->newInstance();
-            return $actionMethod->invoke($controller);
-        }
+    if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+        setlocale(LC_ALL, 'nld_nld');
+    }else {
+        setlocale(LC_ALL, 'nlb');
     }
     
-    setlocale(LC_ALL, 'nlb');
     require __DIR__ . '/vendor/autoload.php';
-    $uc = 'Home/Index';
-    if (isset($_REQUEST['uc'])) {
-        $uc = $_REQUEST['uc'];
+    // New way: reflection
+    // No need for every use-case.
+    function invokeActionMethod($entity,$action,$id) {
+        $namespace='RedMind\Dialog';
+        $controllerName="{$namespace}\\Controller\\{$entity}Controller";
+        $actionMethod=new \ReflectionMethod($controllerName,$action);
+        if (!class_exists($controllerName,true)) {
+            return false;
+        }else {
+            $reflection=new \ReflectionClass($controllerName);
+            $controller=$reflection->newInstance();
+            return $actionMethod->invokeArgs($controller,array($id));
+        }
     }
-    $route = explode('/', $uc);
-    $entity = $route[0];
-    $action = $route[1];
-    $view = invokeActionMethod($entity, $action);
-
+    $uc='Home/Index';
+    if (isset($_REQUEST['uc'])) {
+        $uc=$_REQUEST['uc'];
+    }
+    $route=explode('/',$uc);
+    $entity=$route[0];
+    $action=$route[1];
+    $id=-1;// Standard parameter. Shouldn't appear in the database.
+    if (isset($route[2])) {
+        $id=$route[2];
+    }
+    $view=invokeActionMethod($entity,$action,$id);
 ?>
-<style>
-    <?php include('css/index.css')?>
-</style>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        <?php 
+            include('css/index.css'); 
+        ?>
+    </style>
     <title>Red Mind Dialog</title>
 </head>
 <body>
     <?php $view();?>
     <footer>
-        <label class="labelStyling">Made by Mehdi Sahri</label>
+        <label class="labelStyling">Made By Mehdi Sahri</label>
     </footer>
 </body>
 </html>

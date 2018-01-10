@@ -1,0 +1,68 @@
+<?php
+    namespace RedMind\Dialog\Controller;
+    class NoticeController
+    {
+        private $viewDir="vendor/redmind/dialog/src/View/Notice";
+        private $modelDir="vendor/redmind/dialog/src/Model/Notice";
+        public function Index(){
+            return $this->view();
+        }
+        
+        // Get
+        public function Creating(){
+            return $this->view();
+        }
+        // Post
+        public function Create(){
+            
+            $model=new \RedMind\Dialog\Model\Notice();
+            $model->setSubject(filter_input(INPUT_POST,'subject',FILTER_SANITIZE_STRING));
+            $model->setMessage(filter_input(INPUT_POST,'message',FILTER_SANITIZE_STRING));
+            $model->setStart(filter_input(INPUT_POST,'start',FILTER_SANITIZE_STRING));
+            $model->setEnd(filter_input(INPUT_POST,'end',FILTER_SANITIZE_STRING));
+            $model->setCode(filter_input(INPUT_POST,'code',FILTER_SANITIZE_STRING));
+            $model->setSource(filter_input(INPUT_POST,'source',FILTER_SANITIZE_STRING));
+            
+            $dal=new \RedMind\Dialog\DAL\Notice();
+            $dal->create($model);
+            
+            $view=function(){
+                include("$this->viewDir/Index.php");
+            };
+            return $view;
+        }
+        
+        public function ReadingOne(){
+            return $this->view();
+        }
+        // Post
+        public function ReadOne(){
+            $id=$_POST['id'];
+            $dal=new \RedMind\Dialog\DAL\Notice();
+            $data=$dal->readOne($id);
+            $model=new \RedMind\Dialog\Model\Notice();
+            $model->setId(intval($data['Id']));
+            $model->setSubject($data['Subject']);
+            $model->setMessage($data['Message']);
+            $model->setStart($data['Start']);
+            $model->setEnd($data['End']);
+            $model->setCode($data['Code']);
+            $model->setSource($data['Source']);
+            $view =function() use($model){
+                include("$this->viewDir/ReadOne.php");
+            };
+            return $view;
+        }
+            
+            private function view(){
+                $trace=debug_backtrace();
+                // Get the class of the controller: remove 
+                $controller=str_replace('Controller','',str_replace(__NAMESPACE__.'\\','',$trace[0]["class"]));
+                $method=$trace[1]["function"];
+                $path="vendor/redmind/dialog/src/View/{$controller}/{$method}.php";
+                $view=function() use ($path) {
+                    include($path);
+                };
+                return $view;
+            }
+    }

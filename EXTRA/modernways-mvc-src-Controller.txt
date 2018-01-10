@@ -1,0 +1,10 @@
+<?php
+    namespace ModernWays\MVC
+    class Controller{
+        protected function view(){
+            var_dump(debug_backtrace());
+            return function(){
+                include("index.php");
+            }
+        }
+    }

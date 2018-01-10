@@ -17,6 +17,8 @@
 <!--    </aside>-->
 <!--</div>-->
 
+
+
 <fieldset class="fieldsetBubble">
     <img src="/vos/Content/dialog.png" alt="Logo" width="162" height="142">
     <label class="labelStyling2">

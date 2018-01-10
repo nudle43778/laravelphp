@@ -1,8 +1,8 @@
 <?php
     namespace RedMind\Dialog\Controller;
-    class HomeController extends \ModernWays\Mvc\Controller
+    class HomeController extends \RedMind\Mvc\BaseController
     {
             public function Index(){
-                return $this->view($model);
+                return $this->view();
             }
     }
