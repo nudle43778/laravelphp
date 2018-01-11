@@ -7,30 +7,6 @@
         public function Index(){
             return $this->view();
         }
-        
-        
-        
-        // public function ReadingOne(){
-        //     return $this->view();
-        // }
-        // // Post
-        // public function ReadOne(){
-        //     $id=$_POST['id'];
-        //     $dal=new \RedMind\Dialog\DAL\Notice();
-        //     $data=$dal->readOne($id);
-        //     $model=new \RedMind\Dialog\Model\Notice();
-        //     $model->setId(intval($data['Id']));
-        //     $model->setSubject($data['Subject']);
-        //     $model->setMessage($data['Message']);
-        //     $model->setStart($data['Start']);
-        //     $model->setEnd($data['End']);
-        //     $model->setCode($data['Code']);
-        //     $model->setSource($data['Source']);
-        //     $view =function() use($model){
-        //         include("$this->viewDir/ReadOne.php");
-        //     };
-        //     return $view;
-        // }
                 public function insert() {
             // model updaten gebaseerd op nieuwe input van de view
             $model = new \RedMind\Dialog\Model\Notice();
@@ -56,6 +32,27 @@
              };
              return $view;
          }
+         
+        public function readingAll() {
+                $dal = new \RedMind\Dialog\Dal\Notice();
+                $notice = new \RedMind\Dialog\Model\Notice();
+                $noticeBoard = new\RedMind\Dialog\Model\NoticeBoard();
+                
+                $dal->setNotice($notice);
+                $dal->setNoticeBoard($noticeBoard);
+                $dal->readingAll();
+                return $this->view($dal->getNoticeBoard(), "Notice/ReadingAll");
+        }
+        
+        public function readingOne($id) {
+                $dal = new \RedMind\Dialog\Dal\Notice();
+                $notice = new \RedMind\Dialog\Model\Notice();
+                $notice->setId($id);
+                $dal->setNotice($notice);
+                $dal->readingOne();
+                return $this->view($notice);        
+            
+        }
      }
             
     

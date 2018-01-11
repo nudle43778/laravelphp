@@ -1,10 +1,11 @@
-<div>
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+<aside class="placementRight">
+        <div>
             <div class="command-bar">
-            <button class="buttonStyle" type="submit" value="Notice/Insert" name="uc">Insert in de tabel</button>
             </div>
             
-            <fieldset class="fieldsetBubble">
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                <button class="buttonStyle placementRight" type="submit" value="Notice/Insert" name="uc">Insert in de tabel</button>
+            <fieldset class="fieldsetBubble placementLeftCustom">
                 <legend class="legendMiddle">Insert</legend>
                     <fieldset class="fieldsetBubble">
                         <legend class="legendLeft">Subject</legend>
@@ -50,10 +51,7 @@
                     </fieldset>
 
 
-
+        </div>
             </fieldset>
-
-            <aside class="list">
-                    
+            <!-- partial view lijst notities -->
             </aside>
-    </div>
