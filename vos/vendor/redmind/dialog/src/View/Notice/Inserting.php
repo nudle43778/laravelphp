@@ -1,14 +1,36 @@
+<?php
+    $controller = new \RedMind\Dialog\Controller\NoticeController();
+    $view = $controller->ReadingAll();
+?>
 <div>
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" id="insertForm">
             <div class="command-bar">
-            <button class="buttonStyle" type="submit" value="Notice/Insert" name="uc">Insert in de tabel</button>
             </div>
             
             <fieldset class="fieldsetBubble">
                 <legend class="legendMiddle">Insert</legend>
+                
+                    <aside class="list">
+                        <?php $view();?>
+                    </aside>
+                    <fieldset class="fieldsetBubble3">
+                            <label class="labelStyling3 placementLeft">Notice</label>
+                            <a class="buttonStyle placementRight" href="?uc=Notice/Insert">Notice Inserten</a>
+                    </fieldset>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
                     <fieldset class="fieldsetBubble">
                         <legend class="legendLeft">Subject</legend>
-                        <div>
+                        <div> 
                             <label class="labelStyling" for="Subject">Subject</label>
                             <input class="inputStyling" type="text" name="Subject">
                         </div>
@@ -48,12 +70,10 @@
                             <input class="inputStyling"  type="text" name="Source">
                         </div>
                     </fieldset>
-
+                
 
 
             </fieldset>
 
-            <aside class="list">
-                    
-            </aside>
+            
     </div>

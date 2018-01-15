@@ -39,6 +39,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="/vos/Content/Magnifier.ico">
     <style>
         <?php 
             include('css/index.css'); 
@@ -47,7 +48,23 @@
     <title>Red Mind Dialog</title>
 </head>
 <body>
+<fieldset class="fieldsetBubble">
+        <img src="/vos/Content/dialog.png" alt="Logo" width="162" height="142">
+        <label class="labelStyling2">
+            Dialog
+        </label>
+</fieldset>
+    <br>
+    <br>
     <?php $view();?>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <footer>
         <label class="labelStyling">Made By Mehdi Sahri</label>
     </footer>

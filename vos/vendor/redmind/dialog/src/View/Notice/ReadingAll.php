@@ -7,7 +7,7 @@
         <table class="placementRight">
             <tr>
                 <th class="labelStyling">Select</th>
-                <th class="labelStyling">Onderwerp</th>
+                <th class="labelStyling">Subject</th>
                 <th class="labelStyling">Code</th>
             </tr>
         <?php
@@ -16,10 +16,10 @@
         { ?>
             <tr>
             <td>
-                <a href="?uc=Notice/ReadingOne&amp;id=<?php echo $notice->getId();?>">--></a>
+                <a class="noLinkUnder" href="?uc=Notice/ReadingOne&amp;id=<?php echo $notice->getId();?>">&#8883</a>
             </td>
-            <td><?php echo $notice->getSubject()?></td>
-            <td><?php echo $notice->getCode()?></td>
+            <td class="labelStyling"><?php echo $notice->getSubject()?></td>
+            <td class="labelStyling"><?php echo $notice->getCode()?></td>
             </tr>
         <?php
         } 
@@ -28,7 +28,7 @@
     </fieldset>
     <?php 
 	} else { ?>
-	<p>Geen notities gevonden.</p>
+	<p class="labelStyling">Geen notities gevonden.</p>
 	<?php
 	} ?>
 </aside>

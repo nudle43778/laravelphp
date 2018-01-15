@@ -9,16 +9,16 @@
         }
                 public function insert() {
             // model updaten gebaseerd op nieuwe input van de view
-            $model = new \RedMind\Dialog\Model\Notice();
-            $model->setSubject(filter_input(INPUT_POST, 'Subject', FILTER_SANITIZE_STRING));
-            $model->setCode(filter_input(INPUT_POST, 'Code', FILTER_SANITIZE_STRING));
-            $model->setMessage(filter_input(INPUT_POST, 'Message', FILTER_SANITIZE_STRING));
-            $model->setStart(filter_input(INPUT_POST, 'Start', FILTER_SANITIZE_STRING));
-            $model->setEnd(filter_input(INPUT_POST, 'End', FILTER_SANITIZE_STRING));
-            $model->setSource(filter_input(INPUT_POST, 'Source', FILTER_SANITIZE_STRING));
+            $notice = new \RedMind\Dialog\Model\Notice();
+            $notice->setSubject(filter_input(INPUT_POST, 'Subject', FILTER_SANITIZE_STRING));
+            $notice->setCode(filter_input(INPUT_POST, 'Code', FILTER_SANITIZE_STRING));
+            $notice->setMessage(filter_input(INPUT_POST, 'Message', FILTER_SANITIZE_STRING));
+            $notice->setStart(filter_input(INPUT_POST, 'Start', FILTER_SANITIZE_STRING));
+            $notice->setEnd(filter_input(INPUT_POST, 'End', FILTER_SANITIZE_STRING));
+            $notice->setSource(filter_input(INPUT_POST, 'Source', FILTER_SANITIZE_STRING));
             // insert into table
             $dal = new \RedMind\Dialog\Dal\Notice();
-            $dal->setModel($model);
+            $dal->setNotice($notice);
             $dal->insert();
             
             $view = function () {
@@ -45,6 +45,26 @@
         }
         
         public function readingOne($id) {
+                $dal = new \RedMind\Dialog\Dal\Notice();
+                $notice = new \RedMind\Dialog\Model\Notice();
+                $notice->setId($id);
+                $dal->setNotice($notice);
+                $dal->readingOne();
+                return $this->view($notice);        
+            
+        }
+        
+        public function delete($id) {
+                $dal = new \RedMind\Dialog\Dal\Notice();
+                $notice = new \RedMind\Dialog\Model\Notice();
+                $notice->setId($id);
+                $dal->setNotice($notice);
+                $dal->delete();
+                return $this->view($notice);        
+            
+        }
+        
+        public function updating($id) {
                 $dal = new \RedMind\Dialog\Dal\Notice();
                 $notice = new \RedMind\Dialog\Model\Notice();
                 $notice->setId($id);

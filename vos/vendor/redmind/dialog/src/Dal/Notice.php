@@ -5,11 +5,11 @@
         private $notice;
         private $noticeBoard;
         
-        public function setnotice($notice) {
+        public function setNotice($notice) {
             $this->notice = $notice;
         }
         
-        public function getnotice() {
+        public function getNotice() {
             return $this->notice;
         }
         
@@ -27,11 +27,12 @@
             $db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             $feedback = 'Alles loopt gesmeerd...';
             try {
+                // mysqli_query($db, 'SELECT * FROM Notice WHERE Id=:id')
                 $sqlStatement = 'SELECT * FROM Notice WHERE Id=:id';
                 $statement = $db->prepare($sqlStatement);
                 $statement->bindValue(':id', $this->notice->getId(), \PDO::PARAM_INT);
                 $statement->execute();
-                $row_count = $stmt->rowCount();
+                $row_count = $statement->rowCount();
                 if ($row_count > 0) {
                     $array = $statement->fetch(\PDO::FETCH_ASSOC);
                     $this->notice->setSubject($array['Subject']);
@@ -108,5 +109,63 @@
                     $feedback = "Foutmelding: {$e->getMessage()}";
             }
             return $feedback;
+        }
+        
+        public function updating() {
+             // een rij uit een tabel inlezen
+            $db = new \PDO('mysql:host=localhost;dbname=vos;', 'msahri', '');
+            $db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+            $feedback = 'Alles loopt gesmeerd...';
+            try {
+                $sqlStatement = 'Update Notice SET Subject = :subject Code = :code Message = :message Start = :start End = :end Source = :source WHERE Id = :id';
+                $statement = $db->prepare($sqlStatement);
+                $statement->bindValue(':id', $this->notice->getId(), \PDO::PARAM_INT);
+                $statement->execute();
+                $row_count = $statement->rowCount();
+                if ($row_count > 0) {
+                    $statement = $db->prepare($sqlStatement);
+                $statement->bindValue(':subject', $this->notice->getSubject(), \PDO::PARAM_STR);
+                $statement->bindValue(':code', $this->notice->getCode(), \PDO::PARAM_STR);
+                $statement->bindValue(':message', $this->notice->getMessage(), \PDO::PARAM_STR);
+                $statement->bindValue(':start', $this->notice->getStart(), \PDO::PARAM_STR);
+                $statement->bindValue(':end', $this->notice->getEnd(), \PDO::PARAM_STR);
+                $statement->bindValue(':source', $this->notice->getSource(), \PDO::PARAM_STR);
+                $statement->execute();
+                
+                    $feedback = "Aantal rijen in tabel: $row_count";
+                } else {
+                   $feedback = "Rij met id {$this->notice->getId()} niet gevonden.";
+                
+                }
+             }
+                catch (PDOException $e) {
+                    $feedback = "Foutmelding: {$e->getMessage()}";
+            }
+            return $feedback;           
+        }
+        
+        public function delete() {
+             // een rij uit een tabel inlezen
+            $db = new \PDO('mysql:host=localhost;dbname=vos;', 'msahri', '');
+            $db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+            $feedback = 'Alles loopt gesmeerd...';
+            try {
+                $sqlStatement = 'DELETE FROM `vos`.`Notice` WHERE `Notice`.`Id` = :id';
+                $statement = $db->prepare($sqlStatement);
+                $statement->bindValue(':id', $this->notice->getId(), \PDO::PARAM_INT);
+                $statement->execute();
+                $row_count = $statement->rowCount();
+                if ($row_count > 0) {
+                    
+                    $feedback = "Aantal rijen in tabel: $row_count";
+                } else {
+                   $feedback = "Rij met id {$this->notice->getId()} niet gevonden.";
+                
+                }
+             }
+                catch (PDOException $e) {
+                    $feedback = "Foutmelding: {$e->getMessage()}";
+            }
+            return $feedback;           
         }
     }
